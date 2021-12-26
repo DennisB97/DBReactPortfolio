@@ -1,0 +1,16 @@
+/* Copyright 2021 Dennis Baeckstroem  */
+html, body,#___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+div[role="group"][tabindex] {
+    height: 100%;
+}
+
+p, b{
+ color: wheat;
+}
