@@ -20,7 +20,7 @@ export default function CategoryTab(props)
 {
 const categoryType = props.categoryType;
 const bActive = props.activeCategory === categoryType;
-const name = (categoryType !== undefined) ? categoryType.getName() : "";
+const name = (categoryType !== undefined && categoryType !== null) ? categoryType.getName() : "";
 return(
     <StyledDiv onClick={() => {if(!bActive)props.setCategory(categoryType)}} bActive={bActive}>
     {name}

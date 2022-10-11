@@ -11,22 +11,11 @@ import {CategoryBar,ECategories,findEqCategory} from "../../components/CategoryB
 // contains the state for current category, and it also tries to load from sessionstorage the last category browsed
 const ProjectsPage = ({data}) => {
     
-  var savedCategory = sessionStorage.getItem('currentCategory');
-  var initialCategory = ECategories.cplusplus;
-  if(savedCategory !== null)
-  {
-    initialCategory = findEqCategory(savedCategory);
-  }
-
-  const[currentCategory,setCategory] = useState(initialCategory);
-    useEffect(() => {
-      sessionStorage.setItem('currentCategory',currentCategory.getName());
-    }, [currentCategory]);
-
-    
+  const[currentCategory,setCategory] = useState(ECategories.cplusplus);
+  
     var sortedProjects = [];
     data.allMdx.nodes.forEach(node => {
-      if(node.frontmatter.category.includes(currentCategory.getName()))
+      if(node.frontmatter.category.includes(currentCategory !== undefined ? currentCategory.getName() : "C++"))
       {
         sortedProjects.push(node);
       }
