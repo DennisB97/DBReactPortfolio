@@ -4,8 +4,16 @@ module.exports = {
     title: "DennisBPortfolio",
   },
   plugins: [
-    "gatsby-plugin-gatsby-cloud",`gatsby-plugin-styled-components`, `gatsby-plugin-sharp`, `gatsby-plugin-image`,`gatsby-transformer-sharp`,`gatsby-plugin-react-helmet`,
+    "gatsby-plugin-gatsby-cloud",`gatsby-plugin-styled-components`, `gatsby-plugin-image`,`gatsby-transformer-sharp`,`gatsby-plugin-react-helmet`,
     "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`png`,`webp`]
+        },
+      },
+    },
    {
     resolve: `gatsby-source-filesystem`,
     options: {
@@ -20,6 +28,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
+              withAvif: false,
               withWebp: true,
               showCaptions: false,
               quality: 90,
@@ -40,7 +49,7 @@ module.exports = {
         resolve: `gatsby-source-filesystem`,
         options: {
           name:  `projectImages`,
-          path: `${__dirname}/src/images/projectImages`,
+          path: `${__dirname}/src/images/projectimages`,
         },},
        `gatsby-remark-images`, `gatsby-plugin-catch-links`,
   ],
