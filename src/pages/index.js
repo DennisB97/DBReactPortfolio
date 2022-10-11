@@ -12,10 +12,10 @@ return(
     pageTitleName={"Welcome to my site!"}
    >
      <p>
-     I created this site to be a portfolio site.
+     This is my simple portfolio site.
      On this site there is some more information about myself and some of my programming and projects that I have done.
      For now I created this site very basic,
-     but perhaps will add more functionality and testing some ideas on here as well when it comes to web development.
+     but I am slowly working on a more refined and graphically interesting page.
      </p>
      </BottomContentLayout>
 }/>
